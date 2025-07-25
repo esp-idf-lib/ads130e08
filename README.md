@@ -11,7 +11,7 @@ Driver for ADS130E08 ADC.
 ## Installation
 
 ```sh
-idf.py add-dependency "esp-idf-lib/ads130e08^1.0.0
+idf.py add-dependency esp-idf-lib/ads130e08^1.0.0
 ```
 
 ## Support
