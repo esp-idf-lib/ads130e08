@@ -23,3 +23,5 @@ discussion: https://github.com/esp-idf-lib/core/discussions
 files:
   exclude:
     - docs/**/*
+maintainers:
+  - 
