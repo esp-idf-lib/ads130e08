@@ -1,5 +1,9 @@
 # esp-idf-lib/ads130e08
 
+[![Build examples](https://github.com/esp-idf-lib/ads130e08/actions/workflows//build.yml/badge.svg)](https://github.com/esp-idf-lib/ads130e08/actions/workflows//build.yml)
+[![Build docs](https://github.com/esp-idf-lib/ads130e08/actions/workflows//build-docs.yml/badge.svg)](https://github.com/esp-idf-lib/ads130e08/actions/workflows//build-docs.yml)
+[![Validation](https://github.com/esp-idf-lib/ads130e08/actions/workflows//validate-component.yml/badge.svg)](https://github.com/esp-idf-lib/ads130e08/actions/workflows//validate-component.yml)
+
 Driver for ADS130E08 ADC.
 
 * [Documentation](https://esp-idf-lib.github.io/ads130e08/)
@@ -11,7 +15,7 @@ Driver for ADS130E08 ADC.
 ## Installation
 
 ```sh
-idf.py add-dependency esp-idf-lib/ads130e08^1.0.0
+idf.py add-dependency esp-idf-lib/ads130e08
 ```
 
 ## Support
