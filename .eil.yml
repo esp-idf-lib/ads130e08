@@ -4,7 +4,9 @@ description: Driver for ADS130E08 ADC
 version: 1.0.4
 groups:
   - adc-dac
-code_owners: weslleymfd
+code_owners:
+  - trombik
+  - weslleymfd
 depends:
   - driver
   - log
