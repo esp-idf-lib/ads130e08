@@ -37,7 +37,8 @@ void ads130e08_test(void *pvParameters)
     ads130e08_drdy_semaphore = xSemaphoreCreateBinary();
 
     // Configure SPI bus
-    spi_bus_config_t spi_cfg = {
+    spi_bus_config_t spi_cfg =
+    {
         .mosi_io_num = CONFIG_EXAMPLE_MOSI_GPIO,
         .miso_io_num = CONFIG_EXAMPLE_MISO_GPIO,
         .sclk_io_num = CONFIG_EXAMPLE_SCLK_GPIO,
@@ -49,7 +50,8 @@ void ads130e08_test(void *pvParameters)
     ESP_ERROR_CHECK(spi_bus_initialize(HOST, &spi_cfg, 1));
 
     // Init device
-    static ads130e08_dev_config_t dev_config = {
+    static ads130e08_dev_config_t dev_config =
+    {
         .clk_en = ADS130E08_CLK_OUT_DISABLED,
         .int_test = ADS130E08_INT_TEST_EXTERNAL,
         .test_amp = ADS130E08_TEST_AMP_CALIB_1X,
@@ -67,7 +69,8 @@ void ads130e08_test(void *pvParameters)
     ESP_ERROR_CHECK(ads130e08_set_device_config(&adc_dev, dev_config));
 
     // Configure ISR
-    gpio_config_t int_ads130e08 = {
+    gpio_config_t int_ads130e08 =
+    {
         .intr_type = GPIO_INTR_NEGEDGE,
         .mode = GPIO_MODE_INPUT,
         .pin_bit_mask = (1ULL << CONFIG_EXAMPLE_INT_GPIO),
@@ -89,11 +92,11 @@ void ads130e08_test(void *pvParameters)
         ESP_ERROR_CHECK(ads130e08_get_rdata(&adc_dev, &raw_data));
 
         ESP_LOGI(TAG_ADS130E08, "Fault status -> Positive %02x, Negative %02x", raw_data.fault_statp,
-            raw_data.fault_statn);
+                 raw_data.fault_statn);
         ESP_LOGI(TAG_ADS130E08, "Gpios level -> %02x", raw_data.gpios_level);
         ESP_LOGI(TAG_ADS130E08, "Raw data -> CH1: %d CH2: %d CH3: %d CH4: %d CH5: %d CH6: %d CH7: %d CH8: %d",
-            raw_data.channels_raw[0], raw_data.channels_raw[1], raw_data.channels_raw[2], raw_data.channels_raw[3],
-            raw_data.channels_raw[4], raw_data.channels_raw[5], raw_data.channels_raw[6], raw_data.channels_raw[7]);
+                 raw_data.channels_raw[0], raw_data.channels_raw[1], raw_data.channels_raw[2], raw_data.channels_raw[3],
+                 raw_data.channels_raw[4], raw_data.channels_raw[5], raw_data.channels_raw[6], raw_data.channels_raw[7]);
     }
 }
 

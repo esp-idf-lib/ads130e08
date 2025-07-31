@@ -384,7 +384,7 @@ esp_err_t ads130e08_set_channel_config(ads130e08_t *dev, ads130e08_channel_t cha
 }
 
 esp_err_t ads130e08_get_channel_config(ads130e08_t *dev, ads130e08_channel_t channel,
-    ads130e08_channel_config_t *config)
+                                       ads130e08_channel_config_t *config)
 {
     CHECK_ARG(dev && config);
 
@@ -465,7 +465,7 @@ esp_err_t ads130e08_get_gpio_pin_mode(ads130e08_t *dev, ads130e08_gpio_pin_t gpi
 }
 
 esp_err_t ads130e08_set_gpio_pin_level(ads130e08_t *dev, ads130e08_gpio_pin_t gpio_pin,
-    ads130e08_gpio_level_t gpio_level)
+                                       ads130e08_gpio_level_t gpio_level)
 {
     CHECK_ARG(dev && gpio_pin && gpio_level);
 
@@ -500,7 +500,7 @@ esp_err_t ads130e08_set_gpio_pin_level(ads130e08_t *dev, ads130e08_gpio_pin_t gp
 }
 
 esp_err_t ads130e08_get_gpio_pin_level(ads130e08_t *dev, ads130e08_gpio_pin_t gpio_pin,
-    ads130e08_gpio_level_t *gpio_level)
+                                       ads130e08_gpio_level_t *gpio_level)
 {
     CHECK_ARG(dev && gpio_pin && gpio_level);
 

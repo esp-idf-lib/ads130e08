@@ -45,7 +45,8 @@
 extern "C" {
 #endif
 
-typedef enum {
+typedef enum
+{
     ADS130E08_CMD_WAKEUP = 0x02,
     ADS130E08_CMD_STANDBY = 0x04,
     ADS130E08_CMD_RESET = 0x06,
@@ -53,49 +54,58 @@ typedef enum {
     ADS130E08_CMD_STOP = 0x0A
 } ads130e08_system_cmd_t;
 
-typedef enum {
+typedef enum
+{
     ADS130E08_CMD_RDATAC = 0x10,
     ADS130E08_CMD_SDATAC = 0x11,
     ADS130E08_CMD_RDATA = 0x12
 } ads130e08_data_read_cmd_t;
 
-typedef enum {
+typedef enum
+{
     ADS130E08_CLK_OUT_DISABLED = 0x00, /**< Oscillator clock output disabled (default) */
     ADS130E08_CLK_OUT_ENABLED = 0x20   /**< Oscillator clock output enabled */
 } ads130e08_clk_en_t;
 
-typedef enum {
+typedef enum
+{
     ADS130E08_INT_TEST_EXTERNAL = 0x00, /**< Test signals are driven externally (default) */
     ADS130E08_INT_TEST_INTERNAL = 0x10  /**< Test signals are generated internally */
 } ads130e08_int_test_t;
 
-typedef enum {
+typedef enum
+{
     ADS130E08_TEST_AMP_CALIB_1X = 0x00, /**< 1 × –(VREFP – VREFN) / 2.4 mV (default) */
     ADS130E08_TEST_AMP_CALIB_2X = 0x04  /**< 2 × –(VREFP – VREFN) / 2.4 mV */
 } ads130e08_test_amp_t;
 
-typedef enum {
+typedef enum
+{
     ADS130E08_TEST_FREQ_EXP_21 = 0x00, /**< Pulsed at fCLK / 2^21 (default) */
     ADS130E08_TEST_FREQ_EXP_20 = 0x01, /**< Pulsed at fCLK / 2^20 */
     ADS130E08_TEST_FREQ_AT_DC = 0x11   /**< At dc */
 } ads130e08_test_freq_t;
 
-typedef enum {
+typedef enum
+{
     ADS130E08_INTERNAL_REF_BUFFER_DISABLED = 0x00, /**< Power-down internal reference buffer (default) */
     ADS130E08_INTERNAL_REF_BUFFER_ENABLED = 0x80   /**< Enable internal reference buffer */
 } ads130e08_pd_refbuf_t;
 
-typedef enum {
+typedef enum
+{
     ADS130E08_REF_VOLTAGE_2_4V = 0x00, /**< VREFP is set to 2.4 V (default) */
     ADS130E08_REF_VOLTAGE_4_0V = 0x20, /**< VREFP is set to 4 V (only use with a 5-V analog supply) */
 } ads130e08_vref_4v_t;
 
-typedef enum {
+typedef enum
+{
     ADS130E08_NON_INVERTING_CONNECT_OPAMP = 0x00, /**< Noninverting input connected to the OPAMPP pin (default) */
     ADS130E08_NON_INVERTING_CONNECT_AV = 0x08,    /**< Noninverting input connected to (AVDD + AVSS) / 2 */
 } ads130e08_opamp_ref_t;
 
-typedef enum {
+typedef enum
+{
     ADS130E08_OPAMP_DISABLED = 0x00, /**< Power-down op amp (default) */
     ADS130E08_OPAMP_ENABLED = 0x04,  /**< Enable op amp */
 } ads130e08_pd_opamp_t;
@@ -103,7 +113,8 @@ typedef enum {
 /**
  * Channels
  */
-typedef enum {
+typedef enum
+{
     ADS130E08_CHANNEL_1 = 0x05,
     ADS130E08_CHANNEL_2 = 0x06,
     ADS130E08_CHANNEL_3 = 0x07,
@@ -117,7 +128,8 @@ typedef enum {
 /**
  * Fault detect comparator threshold
  */
-typedef enum {
+typedef enum
+{
     ADS130E08_MODE_1 = 0x00, /**< Comparator positive threshold: 95% , negative threshold: 5% (default) */
     ADS130E08_MODE_2 = 0x20, /**< Comparator positive threshold: 92.5% , negative threshold: 7.5% (default) */
     ADS130E08_MODE_3 = 0x40, /**< Comparator positive threshold: 90% , negative threshold: 10% (default) */
@@ -131,7 +143,8 @@ typedef enum {
 /**
  * Power down
  */
-typedef enum {
+typedef enum
+{
     ADS130E08_NORMAL_OPERATION = 0x00, /**< Normal operation (default) */
     ADS130E08_POWER_DOWN = 0x80        /**< Channel power-down */
 } ads130e08_pd_t;
@@ -139,7 +152,8 @@ typedef enum {
 /**
  * PGA gain
  */
-typedef enum {
+typedef enum
+{
     ADS130E08_PGA_1 = 0x10, /**< x1 */
     ADS130E08_PGA_2 = 0x20, /**< x2 */
     ADS130E08_PGA_8 = 0x50  /**< x8 */
@@ -148,7 +162,8 @@ typedef enum {
 /**
  * MUX
  */
-typedef enum {
+typedef enum
+{
     ADS130E08_NORMAL_INPUT = 0x00,       /**< Normal input (default) */
     ADS130E08_INPUT_SHORTED = 0x01,      /**< Input shorted (for offset or noise measurements) */
     ADS130E08_MVDD = 0x03,               /**< MVDD for supply measurement */
@@ -161,7 +176,8 @@ typedef enum { ADS130E08_FAULT_STATP = 0x12, ADS130E08_FAULT_STATN = 0x13 } ads1
 /**
  * Fault status
  */
-typedef enum {
+typedef enum
+{
     ADS130E08_NO_FAULT_PRESENT = 0x00, /**< No fault present (default) */
     ADS130E08_FAULT_PRESENT = 0x01     /**< Fault present */
 } ads130e08_fault_status_t;
@@ -169,7 +185,8 @@ typedef enum {
 /**
  * GPIO mode
  */
-typedef enum {
+typedef enum
+{
     ADS130E08_GPIO_OUTPUT = 0x00, /**< Output */
     ADS130E08_GPIO_INPUT = 0x01   /**< Input (default) */
 } ads130e08_gpio_mode_t;
@@ -182,7 +199,8 @@ typedef enum { ADS130E08_GPIO_RESET = 0x00, ADS130E08_GPIO_SET = 0x01 } ads130e0
 /**
  * GPIOs
  */
-typedef enum {
+typedef enum
+{
     ADS130E08_GPIO1 = 0x01,
     ADS130E08_GPIO2 = 0x02,
     ADS130E08_GPIO3 = 0x03,
@@ -345,7 +363,7 @@ esp_err_t ads130e08_get_fault_detect_control(ads130e08_t *dev, ads130e08_fault_t
  * @return `ESP_OK` on success
  */
 esp_err_t ads130e08_set_channel_config(ads130e08_t *dev, ads130e08_channel_t channel,
-    ads130e08_channel_config_t config);
+                                       ads130e08_channel_config_t config);
 
 /**
  * @brief Get channel configuration
@@ -356,7 +374,7 @@ esp_err_t ads130e08_set_channel_config(ads130e08_t *dev, ads130e08_channel_t cha
  * @return `ESP_OK` on success
  */
 esp_err_t ads130e08_get_channel_config(ads130e08_t *dev, ads130e08_channel_t channel,
-    ads130e08_channel_config_t *config);
+                                       ads130e08_channel_config_t *config);
 
 /**
  * @brief Set GPIO pin mode
@@ -377,7 +395,7 @@ esp_err_t ads130e08_set_gpio_pin_mode(ads130e08_t *dev, ads130e08_gpio_pin_t gpi
  * @return `ESP_OK` on success
  */
 esp_err_t ads130e08_get_gpio_pin_mode(ads130e08_t *dev, ads130e08_gpio_pin_t gpio_pin,
-    ads130e08_gpio_mode_t *gpio_mode);
+                                      ads130e08_gpio_mode_t *gpio_mode);
 
 /**
  * @brief Set GPIO pin level
@@ -388,7 +406,7 @@ esp_err_t ads130e08_get_gpio_pin_mode(ads130e08_t *dev, ads130e08_gpio_pin_t gpi
  * @return `ESP_OK` on success
  */
 esp_err_t ads130e08_set_gpio_pin_level(ads130e08_t *dev, ads130e08_gpio_pin_t gpio_pin,
-    ads130e08_gpio_level_t gpio_level);
+                                       ads130e08_gpio_level_t gpio_level);
 
 /**
  * @brief Get GPIO pin level
@@ -399,7 +417,7 @@ esp_err_t ads130e08_set_gpio_pin_level(ads130e08_t *dev, ads130e08_gpio_pin_t gp
  * @return `ESP_OK` on success
  */
 esp_err_t ads130e08_get_gpio_pin_level(ads130e08_t *dev, ads130e08_gpio_pin_t gpio_pin,
-    ads130e08_gpio_level_t *gpio_level);
+                                       ads130e08_gpio_level_t *gpio_level);
 
 /**
  * @brief Run automatical fault detection cycle
