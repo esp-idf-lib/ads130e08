@@ -15,7 +15,7 @@ Connect `MOSI`, `MISO`, `SCLK`, `CS` and `INT` pins to the following pins:
 | `CONFIG_EXAMPLE_MOSI_GPIO` | GPIO number for `MOSI` | "23" for `esp32` |
 | `CONFIG_EXAMPLE_MISO_GPIO` | GPIO number for `MISO` | "19" for `esp32` |
 | `CONFIG_EXAMPLE_SCLK_GPIO` | GPIO number for `SCLK` | "18" for `esp32` |
-| `CONFIG_EXAMPLE_CS_GPIO` | GPIO number for `CS` | "5" for `esp32` |
+| `CONFIG_EXAMPLE_CS_GPIO` | GPIO number for `CS` | "6" for `esp32`, "10" for `esp32s2`, and `esp32s3`, "7" for `esp32c2`, `esp32c3`, `esp32c5`, `esp32c6`, `esp32c61`, `esp32h2`, and `esp32p4` |
 | `CONFIG_EXAMPLE_INT_GPIO` | GPIO number for `INT` | "26" for `esp32` |
 
 The driver was tested in ESP32 and ESP32S3, but should also work on other ESP boards.
